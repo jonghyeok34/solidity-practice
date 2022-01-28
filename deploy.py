@@ -39,13 +39,14 @@ abi = compiled_sol["contracts"]["SimpleStorage.sol"]["SimpleStorage"]["abi"]
 print(abi)
 
 # local ganache chain
-w3 = Web3(Web3.HTTPProvider("http://127.0.0.1:7545"))
+w3 = Web3(Web3.HTTPProvider("https://rinkeby.infura.io/v3/92164ab9ce034b5aa1a048cfe180663b"))
 # network id = 5777, chain id = 1337
-chain_id = 1337
+chain_id = 4
 
-my_address = "0x26d01227965fF252BD1458C36b36781E74730175"
+my_address = "0x1307DD272982cC601b4ef2f60b60f237CdD46D4D"
 private_key = os.getenv("PRIVATE_KEY")
-print(private_key)
+# print(private_key)
+
 
 # Create the contract in python
 SimpleStorage = w3.eth.contract(abi=abi, bytecode=bytecode)
